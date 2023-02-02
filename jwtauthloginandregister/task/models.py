@@ -34,9 +34,9 @@ class TaskModel(models.Model):
     #     model_form_class=AssignedToPermissionsForm
     # )
     status = models.CharField(max_length=3, choices=Status.choices, default=Status.active)
-    created_by_name = models.CharField(max_length=100)
+#     created_by_name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     total_comments = models.IntegerField(default=0)
-    created_by_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
